@@ -2310,7 +2310,27 @@ PrefabInstance:
     - target: {fileID: 7187591673293633008, guid: 8198c90d22a18cc41ae53537cc6a9095,
         type: 3}
       propertyPath: m_fontSize
-      value: 18.9
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187591673293633008, guid: 8198c90d22a18cc41ae53537cc6a9095,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187591673293633008, guid: 8198c90d22a18cc41ae53537cc6a9095,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187591673293633008, guid: 8198c90d22a18cc41ae53537cc6a9095,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187591673293633008, guid: 8198c90d22a18cc41ae53537cc6a9095,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8198c90d22a18cc41ae53537cc6a9095, type: 3}

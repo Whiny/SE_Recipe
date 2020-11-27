@@ -41,6 +41,7 @@ public class StartMenuManager : MonoBehaviour
     public TMP_InputField _registerIDInput;
     public TMP_InputField _registerPWInput;
     public TMP_InputField _registerEmailInput;
+    public GameObject errorObject;
 
     void Start()
     {
@@ -89,6 +90,13 @@ public class StartMenuManager : MonoBehaviour
         {
             string jsonStr = www.downloadHandler.text;
             ResponseData data = JsonUtility.FromJson<ResponseData>(jsonStr);
+
+            if(data.stated() == false)
+            {
+                Error();
+            }
+            else
+                CloseRegisterForm();
             Debug.Log(jsonStr);
         }
     }
@@ -116,7 +124,6 @@ public class StartMenuManager : MonoBehaviour
         var registerEmail = _registerEmailInput.text + "@naver.com";
 
         StartCoroutine(Register(registerID, registerPW, registerEmail));
-        CloseRegisterForm();
     }
 
     /// 로그인
@@ -145,6 +152,7 @@ public class StartMenuManager : MonoBehaviour
                 UserManager.Instance.Login(username);
                 SceneManager.LoadScene("MainMenu");
             }
+            Error();
             Debug.Log(jsonStr);
         }
     }
@@ -216,5 +224,16 @@ public class StartMenuManager : MonoBehaviour
         {
            return String.Empty;
         }
+    }
+
+    void Error()
+    {
+        errorObject.SetActive(true);
+        Invoke("CloseError",2);
+    }
+
+    void CloseError()
+    {
+        errorObject.SetActive(false);
     }
 }
